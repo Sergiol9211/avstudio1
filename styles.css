@@ -1,0 +1,410 @@
+/* =============================
+   🌐 Estilos Generales
+============================= */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding-top: 100px;
+}
+
+/* =============================
+   📌 Menú Superior Fijo (.menu)
+============================= */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+}
+
+.logo img {
+    height: 80px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+    align-items: center;
+}
+
+.navbar ul li a {
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+/* =============================
+   🛒 Carrito de Compras
+============================= */
+.carrito {
+    position: relative;
+    font-size: 24px;
+}
+
+.cantidad {
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    background-color: #000;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 50%;
+    padding: 2px 6px;
+}
+
+/* =============================
+   📰 Banner de Contenido Superior (.contenido)
+============================= */
+.contenido {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    padding: 10px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+    height: 30px;
+    font-size: 16px;
+}
+
+.contenido h1 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    animation: slide-in-out 12s ease-in-out infinite;
+    overflow: hidden;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.contenido h1 a {
+    color: #333;
+    font-size: 19px;
+    font-weight: 700;
+    text-decoration: none;
+    font-family: inherit;
+    transition: color 0.3s;
+    animation: blink-link-color 1s steps(2, start) infinite;
+}
+
+.contenido h1 a:hover {
+    color: rgb(240, 7, 201);
+    text-decoration: underline;
+}
+
+/* =============================
+   📂 Menú de Categorías (.menu-categorias)
+============================= */
+.menu-categorias {
+    position: fixed;
+    top: 148px;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    padding: 20px 80px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    z-index: 999;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.menu-categorias ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    flex-wrap: nowrap;
+    min-width: max-content;
+}
+
+.menu-categorias li a {
+    color: #000;
+    text-decoration: none;
+    padding: 8px 15px;
+    background-color: #dadada;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+    white-space: nowrap;
+}
+
+.menu-categorias li a:hover {
+    background-color: #dadada;
+    color: rgb(240, 7, 201);
+}
+
+/* =============================
+   🛍️ Productos
+============================= */
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 140px 1px 0 1px;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.producto {
+    background-color: #dadada;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+    padding: 19px 19px 22px 19px;
+    width: 150px;
+    text-align: center;
+    position: relative;
+    font-size: 14px;
+    transition: transform 0.2s;
+}
+
+.producto:hover {
+    transform: translateY(-3px);
+}
+
+.precio {
+    font-weight: bold;
+    margin-top: 4px;
+    font-size: 15px;
+}
+
+.btn-carrito {
+    background-color: #000;
+    color: #fff;
+    padding: 4px 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 3px;
+    width: 70%;
+    font-size: 15px;
+}
+
+.btn-carrito:hover {
+    background-color: #333;
+}
+
+/* =============================
+   🔔 Notificación Flotante
+============================= */
+.notificacion {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: 1001;
+}
+
+.notificacion.mostrar {
+    opacity: 1;
+}
+
+/* =============================
+   🎞️ Animaciones
+============================= */
+@keyframes slide-in-out {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    5% {
+        transform: translateX(100%);
+        opacity: 1;
+    }
+
+    20%,
+    70% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+
+    95% {
+        transform: translateX(-100%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes blink-link-color {
+
+    0%,
+    100% {
+        color: #333;
+    }
+
+    50% {
+        color: rgb(240, 7, 201);
+    }
+}
+
+/* =============================
+   🦶 Footer
+============================= */
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 20px 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+    font-size: 16px;
+    margin-top: 60px;
+}
+
+.footer>div {
+    flex: 1 1 220px;
+    min-width: 220px;
+    max-width: 350px;
+}
+
+.footer h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 18px;
+    color: #f007c9;
+    font-weight: 700;
+}
+
+.footer a {
+    color: #f007c9;
+    text-decoration: none;
+    transition: color 0.3s;
+    word-break: break-word;
+}
+
+.footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-contacto p,
+.footer-ubicacion p,
+.footer-info p {
+    margin: 6px 0;
+    font-size: 15px;
+}
+
+/* =============================
+   📱 Responsive
+============================= */
+@media (max-width: 600px) {
+    #modal-carrito>div {
+        max-height: 90vh;
+            /* o el valor que prefieras, por ejemplo 85vh */
+            margin-bottom: 4vh;
+            /* agrega un margen inferior */
+            overflow-y: auto;
+    }
+
+    #modal-carrito form {
+        font-size: 15px;
+    }
+
+    #modal-carrito input,
+    #modal-carrito button {
+        font-size: 16px !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    #modal-carrito h2 {
+        font-size: 18px;
+    }
+}
+/* Día seleccionado en el calendario del modal */
+#modal-carrito .btn-dia-turno.seleccionado {
+    background-color: #f007c9 !important;
+    color: #fff !important;
+    border: 2px solid #000 !important;
+}
+/* Hora seleccionada en el calendario del modal */
+#modal-carrito .btn-hora-turno.seleccionado {
+    background-color: #f007c9 !important;
+    color: #fff !important;
+    border: 2px solid #000 !important;
+}
+.calendario-modal {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.calendario-modal th,
+.calendario-modal td {
+    text-align: center;
+    padding: 2px;
+}
+
+.calendario-modal th {
+    background: #f007c9;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 4px 4px 0 0;
+}
+
+.calendario-modal td {
+    background: #fafafa;
+    border: 1px solid #eee;
+    height: 38px;
+}
+
+.calendario-modal .btn-dia-turno {
+    background: #eee;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.calendario-modal .btn-dia-turno.seleccionado {
+    background: #f007c9 !important;
+    color: #fff !important;
+    border: 2px solid #000 !important;
+}
