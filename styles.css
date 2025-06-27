@@ -68,7 +68,7 @@ body {
 }
 
 /* =============================
-   📰 Banner de Contenido Superior (.contenido)
+   📰 Banner de Contenido (.contenido)
 ============================= */
 .contenido {
     position: fixed;
@@ -92,13 +92,11 @@ body {
     font-weight: 700;
     color: #333;
     text-align: center;
-    width: 100%;
     position: relative;
     display: inline-block;
-    animation: slide-in-out 12s ease-in-out infinite;
-    overflow: hidden;
-    word-break: break-word;
-    white-space: normal;
+    animation: slide-in-out 8s ease-in-out infinite;
+    word-break: normal;
+    white-space: nowrap;
 }
 
 .contenido h1 a {
@@ -117,7 +115,7 @@ body {
 }
 
 /* =============================
-   📂 Menú de Categorías (.menu-categorias)
+   📂 Menú de Categorías
 ============================= */
 .menu-categorias {
     position: fixed;
@@ -125,11 +123,17 @@ body {
     left: 0;
     right: 0;
     background-color: #000;
-    padding: 20px 80px;
+    padding: 20px 0;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
     z-index: 999;
     overflow-x: auto;
+    overflow-y: hidden;
     white-space: nowrap;
+    scrollbar-width: none;
+}
+
+.menu-categorias::-webkit-scrollbar {
+    display: none;
 }
 
 .menu-categorias ul {
@@ -157,6 +161,18 @@ body {
 .menu-categorias li a:hover {
     background-color: #dadada;
     color: rgb(240, 7, 201);
+}
+
+.categorias-marquee {
+    display: inline-block;
+    white-space: nowrap;
+    animation: mover-categorias 15s linear infinite;
+    min-width: 100%;
+}
+
+.menu-categorias:hover .categorias-marquee,
+.menu-categorias:active .categorias-marquee {
+    animation-play-state: paused;
 }
 
 /* =============================
@@ -236,46 +252,56 @@ body {
 }
 
 /* =============================
-   🎞️ Animaciones
+   🗓️ Calendario Modal
 ============================= */
-@keyframes slide-in-out {
-    0% {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-
-    5% {
-        transform: translateX(100%);
-        opacity: 1;
-    }
-
-    20%,
-    70% {
-        transform: translateX(0%);
-        opacity: 1;
-    }
-
-    95% {
-        transform: translateX(-100%);
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
+.calendario-modal {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
 }
 
-@keyframes blink-link-color {
+.calendario-modal th,
+.calendario-modal td {
+    text-align: center;
+    padding: 2px;
+}
 
-    0%,
-    100% {
-        color: #333;
-    }
+.calendario-modal th {
+    background: #f007c9;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 4px 4px 0 0;
+}
 
-    50% {
-        color: rgb(240, 7, 201);
-    }
+.calendario-modal td {
+    background: #fafafa;
+    border: 1px solid #eee;
+    height: 38px;
+}
+
+.calendario-modal .btn-dia-turno {
+    background: #eee;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.calendario-modal .btn-dia-turno.seleccionado {
+    background: #f007c9 !important;
+    color: #fff !important;
+    border: 2px solid #000 !important;
+}
+
+#modal-carrito .btn-dia-turno.seleccionado,
+#modal-carrito .btn-hora-turno.seleccionado {
+    background-color: #f007c9 !important;
+    color: #fff !important;
+    border: 2px solid #000 !important;
 }
 
 /* =============================
@@ -328,15 +354,66 @@ body {
 }
 
 /* =============================
+   🎞️ Animaciones
+============================= */
+@keyframes slide-in-out {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    5% {
+        transform: translateX(100%);
+        opacity: 1;
+    }
+
+    20%,
+    70% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+
+    95% {
+        transform: translateX(-100%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes blink-link-color {
+
+    0%,
+    100% {
+        color: #333;
+    }
+
+    50% {
+        color: rgb(190, 43, 166);
+    }
+}
+
+@keyframes mover-categorias {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* =============================
    📱 Responsive
 ============================= */
 @media (max-width: 600px) {
     #modal-carrito>div {
         max-height: 90vh;
-            /* o el valor que prefieras, por ejemplo 85vh */
-            margin-bottom: 4vh;
-            /* agrega un margen inferior */
-            overflow-y: auto;
+        margin-bottom: 4vh;
+        overflow-y: auto;
     }
 
     #modal-carrito form {
@@ -353,89 +430,4 @@ body {
     #modal-carrito h2 {
         font-size: 18px;
     }
-}
-/* Día seleccionado en el calendario del modal */
-#modal-carrito .btn-dia-turno.seleccionado {
-    background-color: #f007c9 !important;
-    color: #fff !important;
-    border: 2px solid #000 !important;
-}
-/* Hora seleccionada en el calendario del modal */
-#modal-carrito .btn-hora-turno.seleccionado {
-    background-color: #f007c9 !important;
-    color: #fff !important;
-    border: 2px solid #000 !important;
-}
-.calendario-modal {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 10px;
-}
-
-.calendario-modal th,
-.calendario-modal td {
-    text-align: center;
-    padding: 2px;
-}
-
-.calendario-modal th {
-    background: #f007c9;
-    color: #fff;
-    font-weight: 600;
-    font-size: 15px;
-    border-radius: 4px 4px 0 0;
-}
-
-.calendario-modal td {
-    background: #fafafa;
-    border: 1px solid #eee;
-    height: 38px;
-}
-
-.calendario-modal .btn-dia-turno {
-    background: #eee;
-    border: none;
-    border-radius: 50%;
-    width: 32px;
-    height: 32px;
-    font-size: 15px;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-}
-
-.calendario-modal .btn-dia-turno.seleccionado {
-    background: #f007c9 !important;
-    color: #fff !important;
-    border: 2px solid #000 !important;
-}
-.menu-categorias {
-    position: fixed;
-    top: 148px; /* Ajusta según tu header */
-    left: 0;
-    right: 0;
-    background-color: #000;
-    padding: 20px 0;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-    z-index: 999;
-    overflow-x: auto; /* Permite scroll horizontal manual */
-    overflow-y: hidden;
-    white-space: nowrap;
-    scrollbar-width: none; /* Oculta barra en Firefox */
-}
-.menu-categorias::-webkit-scrollbar {
-    display: none; /* Oculta barra en Chrome */
-}
-.categorias-marquee {
-    display: inline-block;
-    white-space: nowrap;
-    animation: mover-categorias 18s linear infinite;
-    min-width: 100%;
-}
-.menu-categorias:hover .categorias-marquee,
-.menu-categorias:active .categorias-marquee {
-    animation-play-state: paused; /* Pausa animación al interactuar */
-}
-@keyframes mover-categorias {
-    0% { transform: translateX(100%);}
-    100% { transform: translateX(-100%);}
 }
