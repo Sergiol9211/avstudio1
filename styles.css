@@ -414,24 +414,28 @@ body {
     left: 0;
     right: 0;
     background-color: #000;
-    padding: 20px 80px;
+    padding: 20px 0;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
     z-index: 999;
-    overflow: hidden;
+    overflow-x: auto; /* Permite scroll horizontal manual */
+    overflow-y: hidden;
     white-space: nowrap;
+    scrollbar-width: none; /* Oculta barra en Firefox */
 }
-
+.menu-categorias::-webkit-scrollbar {
+    display: none; /* Oculta barra en Chrome */
+}
 .categorias-marquee {
     display: inline-block;
     white-space: nowrap;
     animation: mover-categorias 18s linear infinite;
+    min-width: 100%;
 }
-
+.menu-categorias:hover .categorias-marquee,
+.menu-categorias:active .categorias-marquee {
+    animation-play-state: paused; /* Pausa animación al interactuar */
+}
 @keyframes mover-categorias {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+    0% { transform: translateX(100%);}
+    100% { transform: translateX(-100%);}
 }
