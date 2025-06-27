@@ -408,3 +408,30 @@ body {
     color: #fff !important;
     border: 2px solid #000 !important;
 }
+.menu-categorias {
+    position: fixed;
+    top: 148px; /* Ajusta según tu header */
+    left: 0;
+    right: 0;
+    background-color: #000;
+    padding: 20px 80px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    z-index: 999;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.categorias-marquee {
+    display: inline-block;
+    white-space: nowrap;
+    animation: mover-categorias 18s linear infinite;
+}
+
+@keyframes mover-categorias {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
