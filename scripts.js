@@ -638,3 +638,47 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+// Permitir arrastrar el banner de categorías manualmente
+const menuCategorias = document.querySelector('.menu-categorias');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+if (menuCategorias) {
+    menuCategorias.addEventListener('mousedown', (e) => {
+        isDown = true;
+        menuCategorias.classList.add('dragging');
+        startX = e.pageX - menuCategorias.offsetLeft;
+        scrollLeft = menuCategorias.scrollLeft;
+    });
+    menuCategorias.addEventListener('mouseleave', () => {
+        isDown = false;
+        menuCategorias.classList.remove('dragging');
+    });
+    menuCategorias.addEventListener('mouseup', () => {
+        isDown = false;
+        menuCategorias.classList.remove('dragging');
+    });
+    menuCategorias.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - menuCategorias.offsetLeft;
+        const walk = (x - startX) * 1.5; // Ajusta la sensibilidad
+        menuCategorias.scrollLeft = scrollLeft - walk;
+    });
+    // Soporte para touch en móviles
+    menuCategorias.addEventListener('touchstart', (e) => {
+        isDown = true;
+        startX = e.touches[0].pageX - menuCategorias.offsetLeft;
+        scrollLeft = menuCategorias.scrollLeft;
+    });
+    menuCategorias.addEventListener('touchend', () => {
+        isDown = false;
+    });
+    menuCategorias.addEventListener('touchmove', (e) => {
+        if (!isDown) return;
+        const x = e.touches[0].pageX - menuCategorias.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        menuCategorias.scrollLeft = scrollLeft - walk;
+    });
+}
