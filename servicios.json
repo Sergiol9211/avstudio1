@@ -1,0 +1,171 @@
+[
+{
+    "nombre": "Epilación de cejas",
+    "descripcion": "Depilamos con cera dermatológica para una forma limpia y definida sin irritación.",
+    "precio": "$15.000",
+    "categoria": "Epilacion",
+    "duracion": 15
+},
+{
+    "nombre": "Sombreado con henna",
+    "descripcion": "Aplicamos henna vegetal para dar color, definición y relleno natural a tus cejas. Efecto de 15 a 31 días.",
+    "precio": "$20.000",
+    "categoria": "Cejas",
+    "duracion": 25
+},
+{
+    "nombre": "Epilación de bozo",
+    "descripcion": "Eliminamos el vello del bozo con técnica suave para una piel limpia y sin irritaciones.",
+    "precio": "$10.000",
+    "categoria": "Epilacion",
+    "duracion": 10
+},
+{
+    "nombre": "SPA de cejas",
+    "descripcion": "Tratamiento post-depilación con crioterapia, mascarilla hidratante y alta frecuencia.",
+    "precio": "$15.000",
+    "categoria": "Cejas",
+    "duracion": 15
+},
+{
+    "nombre": "Botox de cejas",
+    "descripcion": "Tratamiento hidratante y fortalecedor que revitaliza las cejas y mejora su textura.",
+    "precio": "$30.000",
+    "categoria": "Cejas",
+    "duracion": 25
+},
+{
+    "nombre": "Lifting de pestañas",
+    "descripcion": "Curva tus pestañas desde la raíz. Incluye tinte. Efecto de 4 a 6 semanas.",
+    "precio": "$85.000",
+    "categoria": "Pestañas",
+    "duracion": 90
+},
+{
+    "nombre": "Maquillaje express",
+    "descripcion": "Look rápido y fresco. Ideal para el día a día. Incluye preparación de piel.",
+    "precio": "$65.000",
+    "categoria": "Maquillaje",
+    "duracion": 40
+},
+{
+    "nombre": "Maquillaje social",
+    "descripcion": "Maquillaje profesional para eventos, fotos y celebraciones.",
+    "precio": "$80.000",
+    "categoria": "Maquillaje",
+    "duracion": 60
+},
+{
+    "nombre": "Peinados",
+    "descripcion": "Estilos para eventos o sesiones. Precio según complejidad y largo del cabello.",
+    "precio": "$40.000 - $60.000",
+    "categoria": "Peinados",
+    "duracion": 40
+},
+{
+    "nombre": "Epilación de axilas",
+    "descripcion": "Depilación rápida y efectiva que deja tus axilas suaves y limpias por más tiempo.",
+    "precio": "$15.000",
+    "categoria": "Epilacion",
+    "duracion": 15
+},
+{
+    "nombre": "Combo Cejas Perfectas",
+    "descripcion": "Epilación con cera, diseño y sombreado de cejas.",
+    "precio": "$38.000",
+    "categoria": "Combos",
+    "duracion": 40
+},
+{
+    "nombre": "Combo Brow Spa",
+    "descripcion": "Laminado (incluye diseño, depilación, sombreado) + Spa de cejas.",
+    "precio": "$100.000",
+    "categoria": "Combos",
+    "duracion": 105
+},
+{
+    "nombre": "Combo Cejas Premium",
+    "descripcion": "Epilación, diseño, sombreado y botox de cejas.",
+    "precio": "$83.000",
+    "categoria": "Combos",
+    "duracion": 75
+},
+{
+    "nombre": "Combo Cejas Royal",
+    "descripcion": "Laminado completo + botox de cejas.",
+    "precio": "$115.000",
+    "categoria": "Combos",
+    "duracion": 110
+},
+{
+    "nombre": "Combo Mirada de Impacto",
+    "descripcion": "Diseño y sombreado + lifting de pestañas (con tinte).",
+    "precio": "$123.000",
+    "categoria": "Combos",
+    "duracion": 130
+},
+{
+    "nombre": "Combo Brow & Lash Glam",
+    "descripcion": "Laminado de cejas (completo) + lifting de pestañas (con tinte).",
+    "precio": "$170.000",
+    "categoria": "Combos",
+    "duracion": 180
+},
+{
+    "nombre": "Combo Cuidado Total de Ojos",
+    "descripcion": "Laminado completo + Spa de cejas + Lifting de pestañas.",
+    "precio": "$185.000",
+    "categoria": "Combos",
+    "duracion": 195
+},
+{
+    "nombre": "Taller de Automaquillaje Personalizado (BÁSICO)",
+    "descripcion": "Aprende a maquillarte según tu tipo de piel, tono y facciones. Día y noche. Certificado incluido.",
+    "precio": "$300.000",
+    "categoria": "Talleres",
+    "duracion": 240
+},
+{
+    "nombre": "Taller de Maquillaje Avanzado",
+    "descripcion": "Incluye 4 técnicas profesionales para perfeccionar tu estilo. Certificado.",
+    "precio": "$750.000",
+    "categoria": "Talleres",
+    "duracion": 720
+},
+{
+    "nombre": "Taller de Maquillaje Profesional",
+    "descripcion": "Diseñado para trabajar como maquillador profesional. 6 técnicas, novia, quinceañera, piel madura.",
+    "precio": "$1.200.000",
+    "categoria": "Talleres",
+    "duracion": 1200
+},
+{
+    "nombre": "Brunch Makeup (Taller grupal mensual)",
+    "descripcion": "Automaquillaje grupal. Incluye kit, snacks y certificado.",
+    "precio": "$250.000",
+    "categoria": "Talleres",
+    "duracion": 300
+},
+{
+    "nombre": "Taller de Diseño, Depilación y Sombreado de Cejas",
+    "descripcion": "Aprende técnicas con práctica en 2 modelos. Incluye materiales y certificado.",
+    "precio": "$700.000",
+    "categoria": "Talleres",
+    "duracion": 480
+},
+{
+    "nombre": "Taller de Laminado de Cejas",
+    "descripcion": "Técnica profesional de laminado con tinte y depilación. Incluye práctica y materiales.",
+    "precio": "$800.000",
+    "categoria": "Talleres",
+    "duracion": 480
+},
+{
+    "nombre": "Taller de Lifting de Pestañas",
+    "descripcion": "Aprende lifting profesional con tinte. Incluye materiales y práctica.",
+    "precio": "$800.000",
+    "categoria": "Talleres",
+    "duracion": 480
+}
+
+]
