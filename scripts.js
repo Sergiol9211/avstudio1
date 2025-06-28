@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p>${producto.descripcion}</p>
                 <p class="precio">${producto.precio}</p>
                 <p class="duracion">Duración: ${producto.duracion} min</p>
-                <button class="btn-carrito" data-nombre="${producto.nombre}">Reservar servicio</button>
+                <button class="btn-carrito" data-nombre="${producto.nombre}">Reservar</button>
             `;
             productosContainer.appendChild(div);
         });
