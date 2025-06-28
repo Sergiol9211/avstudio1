@@ -45,12 +45,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const div = document.createElement('div');
             div.classList.add('producto');
             div.innerHTML = `
-                <h3>${producto.nombre}</h3>
-                <p>${producto.descripcion}</p>
-                <p class="precio">${producto.precio}</p>
-                <p class="duracion">Duración: ${producto.duracion} min</p>
-                <button class="btn-carrito" data-nombre="${producto.nombre}">Reservar</button>
-            `;
+    <h3>${producto.nombre}</h3>
+    <p class="descripcion-corta">${producto.descripcion}</p>
+    <p class="duracion">Duración: ${producto.duracion} min</p>
+    <p class="precio">${producto.precio}</p>
+    <button class="btn-ver-mas" data-nombre="${producto.nombre}">Ver más</button>
+    <button class="btn-carrito" data-nombre="${producto.nombre}">Reservar</button>
+`;
             productosContainer.appendChild(div);
         });
     }
@@ -72,7 +73,34 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         actualizarContadorCarrito();
     }
+    function mostrarDetalleProducto(nombreProducto) {
+        const producto = productos.find(p => p.nombre === nombreProducto);
+        if (!producto) return;
 
+        // Imágenes (si existen)
+        let imagenesHtml = '';
+        if (producto.imagenes && producto.imagenes.length > 0) {
+            imagenesHtml = `<div style="display:flex;gap:10px;justify-content:center;margin-bottom:10px;">
+                ${producto.imagenes.map(src => `<img src="${src}" style="max-width:120px;max-height:120px;border-radius:8px;">`).join('')}
+            </div>`;
+        }
+
+        const modal = document.createElement('div');
+        modal.id = 'modal-detalle-producto';
+        modal.style = 'position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.7);display:flex;justify-content:center;align-items:center;z-index:3000;';
+        modal.innerHTML = `<div style="background:#fff;padding:30px 20px;border-radius:12px;max-width:400px;max-height:90vh;overflow:auto;position:relative;">
+            <button id="cerrar-detalle-producto" style="position:absolute;top:10px;right:10px;font-size:1.5em;background:none;border:none;cursor:pointer;">&times;</button>
+            <h2>${producto.nombre}</h2>
+            ${imagenesHtml}
+            <p style="margin:15px 0;">${producto.descripcion_larga || producto.descripcion}</p>
+            <p class="precio" style="font-size:18px;">${producto.precio || ''}</p>
+            <p class="duracion">Duración: ${producto.duracion} min</p>
+        </div>`;
+        document.body.appendChild(modal);
+
+        document.getElementById('cerrar-detalle-producto').onclick = () => modal.remove();
+        modal.onclick = (e) => { if (e.target === modal) modal.remove(); };
+    }
     // Actualizar el contador del carrito
     function actualizarContadorCarrito() {
         const contador = document.querySelector(".carrito .cantidad");
@@ -427,6 +455,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target.classList.contains("carrito")) {
             e.preventDefault();
             mostrarCarrito();
+        }
+        // Evento para el botón "Ver más"
+        if (e.target.classList.contains("btn-ver-mas")) {
+            const nombreProducto = e.target.getAttribute("data-nombre");
+            mostrarDetalleProducto(nombreProducto);
         }
     });
 
