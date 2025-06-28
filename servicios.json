@@ -4,7 +4,8 @@
     "descripcion": "Depilamos con cera dermatológica para una forma limpia y definida sin irritación.",
     "precio": "$15.000",
     "categoria": "Epilacion",
-    "duracion": 15
+    "duracion": 15,
+    "imagenes": ["imagserv/maquillaje.jpg", "imagserv/maquillaje.jpg"]
 },
 {
     "nombre": "Sombreado con henna",
