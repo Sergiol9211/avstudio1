@@ -1,3 +1,7 @@
+function handleClientLoad() {
+    gapi.load('client:auth2', initClient);
+}
+window.addEventListener('DOMContentLoaded', handleClientLoad);
 document.addEventListener('DOMContentLoaded', () => {
 
     // Obtenemos el contenedor donde se mostrarán los productos
@@ -11,11 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             productos = data;
             mostrarProductos('Todos');
         });
-
-    // Variables para guardar la fecha y hora seleccionadas
-    let fechaSeleccionada = null;
-    let horaSeleccionada = null;
-
+    
     // Manejo del filtrado por categoría a través de botones o enlaces con data-categoria
     document.querySelectorAll('[data-categoria]').forEach(link => {
         link.addEventListener('click', (e) => {
@@ -23,6 +23,28 @@ document.addEventListener('DOMContentLoaded', () => {
             const categoria = e.target.getAttribute('data-categoria');
             mostrarProductos(categoria);
         });
+    });
+    window.addEventListener('DOMContentLoaded', () => {
+        const marquee = document.querySelector('.categorias-marquee');
+        if (!marquee) return;
+
+        // Duplica el contenido para el efecto infinito
+        marquee.innerHTML += marquee.innerHTML;
+
+        let pos = 0;
+        const speed = 1; // píxeles por frame, ajusta para más rápido o más lento
+
+        function animateMarquee() {
+            pos -= speed;
+            // Cuando termina la primera mitad, resetea
+            if (Math.abs(pos) >= marquee.scrollWidth / 2) {
+                pos = 0;
+            }
+            marquee.style.transform = `translateX(${pos}px)`;
+            requestAnimationFrame(animateMarquee);
+        }
+
+        animateMarquee();
     });
 
     // Función para mostrar los productos en base a la categoría seleccionada
@@ -144,6 +166,55 @@ document.addEventListener('DOMContentLoaded', () => {
                     <button type="submit" style="padding:10px 20px;background:#000;color:#fff;border:none;border-radius:5px;cursor:pointer;font-size:16px;">Finalizar reserva</button>
                 </form>
             `;
+            // ...dentro de mostrarCarrito, después de cerrar el </form>...
+            if (fechaSeleccionada && horaSeleccionada) {
+                const y = fechaSeleccionada.año;
+
+                // Hora de inicio y fin
+                const [h, min, ampm] = horaSeleccionada.match(/(\d+):(\d+)\s*(AM|PM)/i).slice(1);
+                let hora24 = parseInt(h);
+                if (ampm.toUpperCase() === "PM" && hora24 !== 12) hora24 += 12;
+                if (ampm.toUpperCase() === "AM" && hora24 === 12) hora24 = 0;
+
+                const duracionTotal = carrito.reduce((sum, item) => sum + (item.duracion * item.cantidad), 0);
+                let inicio = new Date(y, fechaSeleccionada.mes, fechaSeleccionada.dia, hora24, parseInt(min));
+                let fin = new Date(inicio);
+                fin.setMinutes(fin.getMinutes() + duracionTotal);
+
+                // Formato ISO para Google Calendar
+                const fechaInicio = inicio.toISOString();
+                const fechaFin = fin.toISOString();
+
+                const titulo = "Reserva Angie Varela Studio";
+                const descripcion = "Reserva realizada desde la web.";
+                const ubicacion = "Calle 3 Bis #1D-59, Garzón, Huila, Colombia";
+
+                html += `<button id="btn-google-calendar" style="margin-top:15px;padding:10px 18px;background:#4285F4;color:#fff;border-radius:6px;font-weight:600;border:none;cursor:pointer;">
+        Añadir a Google Calendar
+    </button>`;
+
+                setTimeout(() => {
+                    const btn = document.getElementById('btn-google-calendar');
+                    if (btn) {
+                        btn.onclick = function () {
+                            const event = {
+                                'summary': titulo,
+                                'location': ubicacion,
+                                'description': descripcion,
+                                'start': {
+                                    'dateTime': fechaInicio,
+                                    'timeZone': 'America/Bogota'
+                                },
+                                'end': {
+                                    'dateTime': fechaFin,
+                                    'timeZone': 'America/Bogota'
+                                }
+                            };
+                            handleAuthClick(event);
+                        };
+                    }
+                }, 100);
+            }
         }
         const modal = document.createElement('div');
         modal.id = 'modal-carrito';
