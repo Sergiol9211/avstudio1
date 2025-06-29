@@ -166,8 +166,18 @@ body {
 .categorias-marquee {
     display: inline-block;
     white-space: nowrap;
-    animation: mover-categorias 15s linear infinite;
+    animation: mover-categorias 18s linear infinite;
     min-width: 100%;
+}
+
+@keyframes mover-categorias {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .menu-categorias:hover .categorias-marquee,
@@ -354,7 +364,6 @@ body {
     color: #fff !important;
     border: 2px solid #000 !important;
 }
-
 /* =============================
    🦶 Footer
 ============================= */
