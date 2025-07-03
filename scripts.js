@@ -17,12 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     
     // Manejo del filtrado por categoría a través de botones o enlaces con data-categoria
-    document.querySelectorAll('[data-categoria]').forEach(link => {
-        link.addEventListener('click', (e) => {
+    document.addEventListener('click', function (e) {
+        const link = e.target.closest('[data-categoria]');
+        if (link) {
             e.preventDefault();
-            const categoria = e.target.getAttribute('data-categoria');
+            const categoria = link.getAttribute('data-categoria');
             mostrarProductos(categoria);
-        });
+        }
     });
     window.addEventListener('DOMContentLoaded', () => {
         const marquee = document.querySelector('.categorias-marquee');
@@ -49,31 +50,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Función para mostrar los productos en base a la categoría seleccionada
     function mostrarProductos(categoriaSeleccionada) {
-        productosContainer.innerHTML = ''; // Limpiamos el contenedor
+        productosContainer.innerHTML = '';
 
-        // Filtramos productos si se selecciona una categoría específica
         const productosFiltrados = categoriaSeleccionada === 'Todos'
             ? productos
-            : productos.filter(p => p.categoria === categoriaSeleccionada);
+            : productos.filter(p => {
+                if (Array.isArray(p.categoria)) {
+                    return p.categoria.includes(categoriaSeleccionada);
+                } else {
+                    return p.categoria === categoriaSeleccionada;
+                }
+            });
 
-        // Mostramos mensaje si no hay productos
         if (productosFiltrados.length === 0) {
             productosContainer.innerHTML = "<p>No hay productos en esta categoría.</p>";
             return;
         }
 
-        // Renderizamos cada producto
         productosFiltrados.forEach(producto => {
             const div = document.createElement('div');
             div.classList.add('producto');
             div.innerHTML = `
-    <h3>${producto.nombre}</h3>
-    <p class="descripcion-corta">${producto.descripcion}</p>
-    <p class="duracion">Duración: ${producto.duracion} min</p>
-    <p class="precio">${producto.precio}</p>
-    <button class="btn-ver-mas" data-nombre="${producto.nombre}">Ver más</button>
-    <button class="btn-carrito" data-nombre="${producto.nombre}">Reservar</button>
-`;
+                <h3>${producto.nombre}</h3>
+                <p class="descripcion-corta">${producto.descripcion}</p>
+                <p class="duracion">Duración: ${producto.duracion} min</p>
+                <p class="precio">${producto.precio}</p>
+                <button class="btn-ver-mas" data-nombre="${producto.nombre}">Ver más</button>
+                <button class="btn-carrito" data-nombre="${producto.nombre}">Reservar</button>
+            `;
             productosContainer.appendChild(div);
         });
     }
