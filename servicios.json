@@ -1,172 +1,189 @@
 [
-{
-    "nombre": "Epilación de cejas",
-    "descripcion": "Depilamos con cera dermatológica para una forma limpia y definida sin irritación.",
-    "precio": "$15.000",
-    "categoria": "Epilacion",
-    "duracion": 15,
-    "imagenes": ["imagserv/maquillaje.jpg", "imagserv/maquillaje.jpg"]
-},
-{
-    "nombre": "Sombreado con henna",
-    "descripcion": "Aplicamos henna vegetal para dar color, definición y relleno natural a tus cejas. Efecto de 15 a 31 días.",
-    "precio": "$20.000",
-    "categoria": "Cejas",
-    "duracion": 25
-},
-{
-    "nombre": "Epilación de bozo",
-    "descripcion": "Eliminamos el vello del bozo con técnica suave para una piel limpia y sin irritaciones.",
-    "precio": "$10.000",
-    "categoria": "Epilacion",
-    "duracion": 10
-},
-{
-    "nombre": "SPA de cejas",
-    "descripcion": "Tratamiento post-depilación con crioterapia, mascarilla hidratante y alta frecuencia.",
-    "precio": "$15.000",
-    "categoria": "Cejas",
-    "duracion": 15
-},
-{
-    "nombre": "Botox de cejas",
-    "descripcion": "Tratamiento hidratante y fortalecedor que revitaliza las cejas y mejora su textura.",
-    "precio": "$30.000",
-    "categoria": "Cejas",
-    "duracion": 25
-},
-{
-    "nombre": "Lifting de pestañas",
-    "descripcion": "Curva tus pestañas desde la raíz. Incluye tinte. Efecto de 4 a 6 semanas.",
-    "precio": "$85.000",
-    "categoria": "Pestañas",
-    "duracion": 90
-},
-{
-    "nombre": "Maquillaje express",
-    "descripcion": "Look rápido y fresco. Ideal para el día a día. Incluye preparación de piel.",
-    "precio": "$65.000",
-    "categoria": "Maquillaje",
-    "duracion": 40
-},
-{
-    "nombre": "Maquillaje social",
-    "descripcion": "Maquillaje profesional para eventos, fotos y celebraciones.",
-    "precio": "$80.000",
-    "categoria": "Maquillaje",
-    "duracion": 60
-},
-{
-    "nombre": "Peinados",
-    "descripcion": "Estilos para eventos o sesiones. Precio según complejidad y largo del cabello.",
-    "precio": "$40.000 - $60.000",
-    "categoria": "Peinados",
-    "duracion": 40
-},
-{
-    "nombre": "Epilación de axilas",
-    "descripcion": "Depilación rápida y efectiva que deja tus axilas suaves y limpias por más tiempo.",
-    "precio": "$15.000",
-    "categoria": "Epilacion",
-    "duracion": 15
-},
-{
-    "nombre": "Combo Cejas Perfectas",
-    "descripcion": "Epilación con cera, diseño y sombreado de cejas.",
-    "precio": "$38.000",
-    "categoria": "Combos",
-    "duracion": 40
-},
-{
-    "nombre": "Combo Brow Spa",
-    "descripcion": "Laminado (incluye diseño, depilación, sombreado) + Spa de cejas.",
-    "precio": "$100.000",
-    "categoria": "Combos",
-    "duracion": 105
-},
-{
-    "nombre": "Combo Cejas Premium",
-    "descripcion": "Epilación, diseño, sombreado y botox de cejas.",
-    "precio": "$83.000",
-    "categoria": "Combos",
-    "duracion": 75
-},
-{
-    "nombre": "Combo Cejas Royal",
-    "descripcion": "Laminado completo + botox de cejas.",
-    "precio": "$115.000",
-    "categoria": "Combos",
-    "duracion": 110
-},
-{
-    "nombre": "Combo Mirada de Impacto",
-    "descripcion": "Diseño y sombreado + lifting de pestañas (con tinte).",
-    "precio": "$123.000",
-    "categoria": "Combos",
-    "duracion": 130
-},
-{
-    "nombre": "Combo Brow & Lash Glam",
-    "descripcion": "Laminado de cejas (completo) + lifting de pestañas (con tinte).",
-    "precio": "$170.000",
-    "categoria": "Combos",
-    "duracion": 180
-},
-{
-    "nombre": "Combo Cuidado Total de Ojos",
-    "descripcion": "Laminado completo + Spa de cejas + Lifting de pestañas.",
-    "precio": "$185.000",
-    "categoria": "Combos",
-    "duracion": 195
-},
-{
-    "nombre": "Taller de Automaquillaje Personalizado (BÁSICO)",
-    "descripcion": "Aprende a maquillarte según tu tipo de piel, tono y facciones. Día y noche. Certificado incluido.",
-    "precio": "$300.000",
-    "categoria": "Talleres",
-    "duracion": 240
-},
-{
-    "nombre": "Taller de Maquillaje Avanzado",
-    "descripcion": "Incluye 4 técnicas profesionales para perfeccionar tu estilo. Certificado.",
-    "precio": "$750.000",
-    "categoria": "Talleres",
-    "duracion": 720
-},
-{
-    "nombre": "Taller de Maquillaje Profesional",
-    "descripcion": "Diseñado para trabajar como maquillador profesional. 6 técnicas, novia, quinceañera, piel madura.",
-    "precio": "$1.200.000",
-    "categoria": "Talleres",
-    "duracion": 1200
-},
-{
-    "nombre": "Brunch Makeup (Taller grupal mensual)",
-    "descripcion": "Automaquillaje grupal. Incluye kit, snacks y certificado.",
-    "precio": "$250.000",
-    "categoria": "Talleres",
-    "duracion": 300
-},
-{
-    "nombre": "Taller de Diseño, Depilación y Sombreado de Cejas",
-    "descripcion": "Aprende técnicas con práctica en 2 modelos. Incluye materiales y certificado.",
-    "precio": "$700.000",
-    "categoria": "Talleres",
-    "duracion": 480
-},
-{
-    "nombre": "Taller de Laminado de Cejas",
-    "descripcion": "Técnica profesional de laminado con tinte y depilación. Incluye práctica y materiales.",
-    "precio": "$800.000",
-    "categoria": "Talleres",
-    "duracion": 480
-},
-{
-    "nombre": "Taller de Lifting de Pestañas",
-    "descripcion": "Aprende lifting profesional con tinte. Incluye materiales y práctica.",
-    "precio": "$800.000",
-    "categoria": "Talleres",
-    "duracion": 480
-}
-
+    {
+        "nombre": "Depilación de cejas",
+        "categoria": ["Depilacion","Cejas"],
+        "descripcion": "Realzamos tu belleza natural con una depilación de cejas precisa, suave y sin irritaciones. Utilizamos cera dermatológica de alta calidad, ideal incluso para pieles sensibles, logrando una forma limpia, armoniosa y perfectamente definida que resalta tu mirada desde el primer momento.Este servicio no incluye diseño de cejas; se realiza respetando la forma actual.¡Transforma tu rostro en minutos y siéntete renovada!",
+        "precio": "$15.000",
+        "duracion": 15,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Depilación de cejas y bozo",
+        "categoria": "Combos",
+        "descripcion": "Elimina el vello no deseado de forma precisa y segura con cera dermatológica, cuidando incluso las pieles más sensibles. Este servicio incluye la depilación del bozo y limpieza de cejas, respetando su forma natural. Ideal para mantener una apariencia prolija, fresca y armoniosa en pocos minutos, sin irritaciones.",
+        "precio": "$22.000",
+        "duracion": 20,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "",
+        "categoria": "Peinados",
+        "descripcion": "Elimina el vello no deseado de forma precisa y segura con cera dermatológica, cuidando incluso las pieles más sensibles. Este servicio incluye la depilación del bozo y limpieza de cejas, respetando su forma natural. Ideal para mantener una apariencia prolija, fresca y armoniosa en pocos minutos, sin irritaciones.",
+        "precio": "$22.000",
+        "duracion": 20,
+        "imagenes": [
+            ""
+        ]
+    },
+    {
+        "nombre": "Depilación y spa de cejas",
+        "categoria": "Combos",
+        "descripcion": "Luce unas cejas limpias, definidas y una piel cuidada con este combo ideal. Comenzamos con la depilación con cera dermatológica para dar forma y eliminar el vello no deseado, y finalizamos con nuestro spa de cejas: crioterapia, mascarilla hidratante y alta frecuencia para calmar, desinflamar y revitalizar la zona. Un servicio completo para mantener tus cejas impecables y tu piel saludable.",
+        "precio": "$35.000",
+        "duracion": 45,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Laminado y spa de cejas",
+        "categoria": "Combos",
+        "descripcion": "Transforma tus cejas con este combo completo que une estética y cuidado. El laminado alinea y fija los vellos en la dirección ideal, aportando volumen, definición y un efecto peinado de larga duración. Incluye diseño, depilación con cera dermatológica y tinte para intensificar el color. Finalizamos con nuestro spa de cejas: crioterapia, mascarilla hidratante y alta frecuencia para calmar, desinflamar y revitalizar la piel.El efecto del laminado dura entre 4 y 6 semanas e incluye kit de poscuidado.",
+        "precio": "$105.000",
+        "duracion": 120,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Laminado y Lifting",
+        "categoria": "Combos",
+        "descripcion": "Realza al máximo tu mirada con este combo ideal de laminado de cejas y lifting de pestañas. El laminado alinea, fija y da volumen a tus cejas, mientras que el lifting curva tus pestañas desde la raíz para un efecto natural, alargado y definido sin necesidad de extensiones. Incluye diseño de cejas, depilación con cera dermatológica, tinte para cejas y pestañas, y kit de poscuidado para mantener los resultados por más tiempo. Ambos efectos duran de 4 a 6 semanas. Perfecto para lograr una mirada impactante, natural y de bajo mantenimiento.",
+        "precio": "$170.000",
+        "duracion": 120,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Botox para cejas y pestañas",
+        "categoria": "Combos",
+        "descripcion": "Nutre y revitaliza tu mirada con este tratamiento completo de bótox para cejas y pestañas. Hidrata profundamente, fortalece la fibra capilar y devuelve el brillo natural, logrando un aspecto más saludable, suave y definido. Ideal para recuperar vellos debilitados tras procedimientos como lifting, laminado o tinte. En una sola sesión, tus cejas y pestañas lucirán más densas, resistentes y con una apariencia renovada.",
+        "precio": "$60.000",
+        "duracion": 40,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "lifting de pestañas y depilación de cejas",
+        "categoria": "Combos",
+        "descripcion": "Realza tu mirada con este combo perfecto que combina el lifting de pestañas —que curva y alarga tus pestañas desde la raíz para un efecto natural sin extensiones— con una depilación de cejas precisa usando cera dermatológica. Logra un rostro más expresivo, limpio y armonioso en una sola sesión. Ideal para quienes buscan practicidad, definición y belleza duradera sin maquillaje diario. El lifting incluye tinte y kit de poscuidado, y el diseño de cejas se respeta según su forma natural.",
+        "precio": "$100.000",
+        "duracion": 105,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Diseño depilacion y somberado + lifting de pestañas",
+        "categoria": "Combos",
+        "descripcion": "Potencia tu mirada con este combo completo que define tus cejas y realza tus pestañas. Comenzamos con un diseño personalizado adaptado a tu rostro, seguido de depilación con cera dermatológica para limpiar y definir, y sombreado para rellenar y dar color con un efecto natural y duradero. Complementamos con un lifting de pestañas que curva y eleva desde la raíz, intensificando la expresión de tus ojos sin necesidad de maquillaje diario. Incluye tinte en pestañas y kit de poscuidado. Ideal para lograr un acabado armonioso, elegante y de larga duración.",
+        "precio": "$123.000",
+        "duracion": 130,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Depilación de bozo",
+        "categoria": "Depilacion",
+        "descripcion": "Elimina de forma rápida y segura el vello del bozo (labio superior) con cera dermatológica, diseñada especialmente para cuidar tu piel. Logra una apariencia limpia, suave y fresca sin irritaciones. Ideal para mantener tu rostro prolijo y radiante en solo minutos.",
+        "precio": "$7.000",
+        "duracion": 8,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Depilación full face",
+        "categoria": "Depilacion",
+        "descripcion": "Luce un rostro limpio, suave y radiante con nuestra depilación facial completa. Utilizamos cera dermatológica de alta calidad para eliminar delicadamente el vello del rostro, incluyendo cejas y bozo. Ideal para mantener una piel libre de vello y con un acabado prolijo, sin irritaciones.",
+        "precio": "$45.000",
+        "duracion": 35,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Depilación de axilas",
+        "categoria": "Depilacion",
+        "descripcion": "Elimina el vello de las axilas de forma rápida, eficaz y sin irritaciones con nuestra cera dermatológica de alta calidad. Logra una piel suave, limpia y libre de residuos por más tiempo. Ideal para todo tipo de piel, incluso las más sensibles. ¡Siéntete fresca, cómoda y segura todos los días!",
+        "precio": "$15.000",
+        "duracion": 15,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Diseño depilacion y sombreado",
+        "categoria": ["Combos", "Cejas"],
+        "descripcion": "Potencia tu mirada con un diseño de cejas personalizado que se adapta a la forma de tu rostro. Incluye depilación con cera dermatológica para definir y limpiar, y sombreado con productos de larga duración que rellenan y realzan tus cejas de forma natural. Ideal para lograr un acabado armonioso, prolijo y expresivo por varios días. ¡Cejas definidas, rostro equilibrado y mirada impactante en una sola sesión!",
+        "precio": "$38.000",
+        "duracion": 45,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Sombreado de cejas",
+        "categoria": "Cejas",
+        "descripcion": "Rellena y realza tus cejas con un sombreado de efecto natural que define su forma y mejora su apariencia sin necesidad de maquillaje diario. Utilizamos productos de larga duración que se adaptan a tu tono y estilo, logrando un acabado prolijo y armonioso que resalta tu mirada. Ideal para cejas con espacios irregulares o poco pobladas.No incluye depilación.",
+        "precio": "$25.000",
+        "duracion": 30,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Laminado de cejas",
+        "categoria": "Cejas",
+        "descripcion": "Consigue unas cejas con más volumen, forma y un acabado natural gracias al tratamiento de laminado. Este servicio alinea y fija los vellos en la dirección ideal, logrando un efecto de cejas más densas, ordenadas y definidas. Incluye diseño personalizado, depilación con cera dermatológica, aplicación de tinte y kit de poscuidado para mantener los resultados por más tiempo. El efecto del laminado dura entre 4 y 6 semanas. Ideal para cejas rebeldes, sin forma o con poco volumen. ¡Cejas perfectas desde que te levantas!",
+        "precio": "$85.000",
+        "duracion": 90,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Botox para cejas",
+        "categoria": "Cejas",
+        "descripcion": "Tratamiento nutritivo que revitaliza y fortalece el vello de tus cejas, aportando brillo, suavidad y una apariencia más saludable. El bótox hidrata profundamente, ayuda a restaurar la fibra capilar y mejora la forma natural de las cejas. Ideal para cejas secas, débiles o con procesos químicos previos como tinte o laminado. No incluye diseño ni depilación.",
+        "precio": "$30.000",
+        "duracion": 30,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Botox para pestañas",
+        "categoria": "Pestañas",
+        "descripcion": "Tratamiento intensivo que hidrata, nutre y fortalece tus pestañas desde la raíz hasta las puntas. El bótox ayuda a engrosar la fibra capilar, mejora el brillo natural y previene la caída, dejando tus pestañas más sanas, suaves y resistentes. Ideal después de procedimientos como lifting o tinte, o simplemente para recuperar pestañas debilitadas.",
+        "precio": "$30.000",
+        "duracion": 30,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Spa de cejas",
+        "categoria": "Cejas",
+        "descripcion": "Tratamiento relajante y reparador ideal para calmar y cuidar la piel tras cualquier procedimiento de cejas. Incluye crioterapia, mascarilla hidratante y alta frecuencia para reducir la inflamación, cerrar poros y mejorar la textura de la piel en la zona tratada. Este servicio es adicional y solo puede tomarse junto con otro procedimiento de cejas (diseño, depilación, laminado, etc.). Perfecto para quienes buscan una experiencia más completa y un acabado profesional sin molestias.",
+        "precio": "$20.000",
+        "duracion": 30,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Lifting de pestañas",
+        "categoria": "Pestañas",
+        "descripcion": "Realza tu mirada con un efecto de pestañas naturalmente largas, curvadas y definidas, sin necesidad de encrespador ni extensiones. Este tratamiento eleva las pestañas desde la raíz, abriendo visualmente el ojo y dándole mayor expresión.Incluye aplicación de tinte para intensificar el color y lograr un resultado más profundo y uniforme.El efecto dura entre 4 y 6 semanas y se entrega con kit de poscuidado para mantener tus pestañas sanas, hidratadas y con mayor duración.Ideal para todo tipo de pestañas. ¡Despierta cada día con una mirada radiante y sin esfuerzo!",
+        "precio": "$85.000",
+        "duracion": 90,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Maquillaje Express",
+        "categoria": "Maquillaje",
+        "descripcion": "Ideal para el día a día o salidas imprevistas, este maquillaje rápido y fresco realza tu belleza natural en pocos minutos. Logramos un acabado prolijo, ligero y favorecedor, adaptado a tu estilo y ocasión. Incluye preparación de piel, base ligera, rubor, máscara de pestañas, cejas definidas, labios a elección y un tono de sombra suave para dar profundidad a la mirada sin recargar. Perfecto si necesitas verte bien en poco tiempo y sin complicaciones.",
+        "precio": "$60.000",
+        "duracion": 40,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Maquillaje Social",
+        "categoria": "Maquillaje",
+        "descripcion": "Luce espectacular y segura en cualquier ocasión especial con un maquillaje social pensado para realzar tu belleza y estilo. Utilizamos técnicas profesionales y productos de alta duración para lograr un acabado impecable, elegante y resistente. Incluye preparación de piel, base HD, contorno, iluminación, rubor, cejas definidas, maquillaje de ojos completo con sombras a elección, aplicación de pestañas postizas, labios personalizados, fijación profesional y piel blindada para máxima duración y efecto filtro.",
+        "precio": "$85.000",
+        "duracion": 60,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Maquillaje Novia",
+        "categoria": "Maquillaje",
+        "descripcion": "En el día más especial de tu vida, mereces un maquillaje que resalte tu esencia y te haga sentir absolutamente radiante. Diseñamos un look único, elegante y duradero, pensado para lucir perfecto en fotos, en persona y a lo largo de toda la celebración. Incluye preparación profunda de la piel con mascarilla facial hidratante, piel blindada, base HD, contorno, rubor, iluminación, maquillaje de ojos completo con sombras a elección, cejas definidas, pestañas postizas, labios personalizados y fijación profesional de larga duración. Ofrecemos asesoría previa para definir el estilo ideal y asegurar un resultado impecable. La prueba de maquillaje y el servicio a domicilio son opcionales y tienen costo adicional.",
+        "precio": "$120.000",
+        "duracion": 70,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Maquillaje Quinceañera",
+        "categoria": "Maquillaje",
+        "descripcion": "En el día más especial de tu vida, mereces un maquillaje que resalte tu esencia y te haga sentir absolutamente radiante. Diseñamos un look único, elegante y duradero, pensado para lucir perfecto en fotos, en persona y a lo largo de toda la celebración. Incluye preparación profunda de la piel con mascarilla facial hidratante, piel blindada, base HD, contorno, rubor, iluminación, maquillaje de ojos completo con sombras a elección, cejas definidas, pestañas postizas, labios personalizados y fijación profesional de larga duración. Ofrecemos asesoría previa para definir el estilo ideal y asegurar un resultado impecable. La prueba de maquillaje y el servicio a domicilio son opcionales y tienen costo adicional.",
+        "precio": "$120.000",
+        "duracion": 70,
+        "imagenes": [""]
+    }
+    
 ]
