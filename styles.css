@@ -481,3 +481,53 @@ body {
         font-size: 18px;
     }
 }
+/* Modal de advertencia personalizado */
+.modal-advertencia {
+    display: none;
+    position: fixed;
+    z-index: 4000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-advertencia.mostrar {
+    display: flex;
+}
+
+.modal-advertencia-contenido {
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 12px;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+
+.modal-advertencia-contenido p {
+    font-size: 1.1em;
+    margin-bottom: 18px;
+}
+
+#btn-aceptar-advertencia {
+    padding: 8px 18px;
+    margin-right: 10px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#btn-cancelar-advertencia {
+    padding: 8px 18px;
+    background: #eee;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
