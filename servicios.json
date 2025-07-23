@@ -16,14 +16,20 @@
         "imagenes": [""]
     },
     {
-        "nombre": "",
+        "nombre": "Cepillado y planchado de cabello",
         "categoria": "Peinados",
-        "descripcion": "Elimina el vello no deseado de forma precisa y segura con cera dermatológica, cuidando incluso las pieles más sensibles. Este servicio incluye la depilación del bozo y limpieza de cejas, respetando su forma natural. Ideal para mantener una apariencia prolija, fresca y armoniosa en pocos minutos, sin irritaciones.",
-        "precio": "$22.000",
-        "duracion": 20,
-        "imagenes": [
-            ""
-        ]
+        "descripcion": "Logra un acabado liso, brillante y con movimiento gracias a nuestro servicio de cepillado y planchado profesional. Comenzamos con un cepillado que moldea y da volumen, seguido del planchado con herramientas de alta calidad que dejan tu cabello suave, sin frizz y perfectamente alineado. Ideal para eventos, salidas o simplemente para sentirte radiante cualquier día. 💡 El valor del servicio varía según el largo y la cantidad de cabello.",
+        "precio": "$0",
+        "duracion": 45,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Ondas",
+        "categoria": "Peinados",
+        "descripcion": "Dale movimiento, volumen y un toque glamuroso a tu cabello con nuestro servicio de ondas. Ideal para ocasiones especiales o para realzar tu estilo diario con un acabado moderno y elegante. Utilizamos técnicas y herramientas profesionales para lograr ondas suaves, definidas y duraderas, adaptadas a tu tipo de cabello y preferencia. 💡 El valor del servicio varía según el largo y la cantidad de cabello.",
+        "precio": "$0",
+        "duracion": 60,
+        "imagenes": [""]
     },
     {
         "nombre": "Depilación y spa de cejas",
@@ -184,6 +190,37 @@
         "precio": "$120.000",
         "duracion": 70,
         "imagenes": [""]
+    },
+    {
+        "nombre": "Diseño + Depilacion de cejas",
+        "categoria": ["Combos","Cejas"],
+        "descripcion": "Realzamos la forma natural de tus cejas a través de un diseño personalizado según tu tipo de rostro, seguido de una depilación precisa con cera dermatológica o pinza. Este procedimiento armoniza tu mirada y mejora tu expresión facial, logrando un acabado limpio, definido y elegante.",
+        "precio": "$20.000",
+        "duracion": 20,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Taller básico de Automaquillaje Personalizado",
+        "categoria": "Talleres",
+        "descripcion": "En este taller aprenderás a maquillarte como una experta, desde lo más básico hasta lograr looks completos para el día y la noche. No necesitas experiencia previa, aquí te guiamos paso a paso para que entiendas lo que realmente le favorece a tu rostro y a tu piel. ¿Qué aprenderás? Reconocer tu tipo de piel y cómo prepararla correctamente. Aplicación adecuada de productos: base, corrector, polvos, rubor e iluminador Diseño y maquillaje de cejas. Técnicas de aplicación de sombras Maquillaje para el día (natural) y para la noche (más elaborado) Recomendaciones personalizadas según tus rasgos, estilo y productos",
+        "precio": "$400.000",
+        "duracion": 300,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Taller Avanzado de Maquillaje Personalizado",
+        "categoria": "Talleres",
+        "descripcion": "Este taller está diseñado para quienes ya tienen conocimientos básicos de automaquillaje y desean llevar sus habilidades al siguiente nivel. Aquí no solo aprenderás nuevas técnicas, sino que adaptarás cada una de ellas a tus rasgos, estilo y necesidades personales. Aprenderás perfeccionamiento en la preparación de piel para diferentes acabados, correcciones avanzadas como visagismo, contorno e iluminación según tu tipo de rostro, técnicas profesionales para ojos como difuminado, delineado y profundidad, aplicación experta de pestañas y productos de larga duración, maquillaje glam y sofisticado para eventos, y cómo elegir productos adecuados para tu tipo de piel, tono y estilo. Además, revisaremos de forma personalizada tu maletín de maquillaje y desarrollarás 4 técnicas profesionales que elevarán tu nivel y confianza al maquillar.",
+        "precio": "$700.000",
+        "duracion": 360,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Taller Profecional de Maquillaje Personalizado",
+        "categoria": "Talleres",
+        "descripcion": "Este taller está diseñado para quienes desean iniciar su camino en el mundo del maquillaje desde cero, con una formación completa, personalizada y profesional. Aprenderás desde la preparación adecuada de la piel según tu tipo, hasta la aplicación correcta de todos los productos: bases, correctores, polvos, rubores, iluminadores y más. Incluye diseño y maquillaje de cejas, técnicas de aplicación de sombras, maquillaje de día y noche, visagismo, contorno, colocación de pestañas, productos de larga duración y recomendaciones según tu tipo de rostro y estilo. Además, desarrollarás 4 técnicas completas con acompañamiento personalizado para que logres maquillar con seguridad, precisión y criterio profesional. Ideal para personas que desean convertirse en maquilladoras y empezar a trabajar ofreciendo este servicio de forma segura, efectiva y con bases sólidas.",
+        "precio": "$1.200.000",
+        "duracion": 720,
+        "imagenes": [""]
     }
-    
 ]
