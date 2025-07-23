@@ -397,7 +397,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target.classList.contains("btn-carrito")) {
             const nombreProducto = e.target.getAttribute("data-nombre");
             agregarAlCarrito(nombreProducto);
-            mostrarNotificacion(`"${nombreProducto}" fue agregado al carrito 🛍️`);
+            mostrarNotificacion(`"${nombreProducto}" fue agregado al carrito 🛒`);
         }
         if (e.target.classList.contains("carrito")) {
             e.preventDefault();
