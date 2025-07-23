@@ -135,17 +135,15 @@ document.addEventListener('DOMContentLoaded', () => {
             contador.textContent = total;
         }
     }
-
-    // Mostrar el carrito en un modal
+    // Mostrar el carrito
     function mostrarCarrito() {
-        let html = '<h2>Carrito de compras</h2>';
+        let html = '<h2>Servicios elegidos</h2>';
         if (carrito.length === 0) {
             html += '<p>El carrito está vacío.</p>';
         } else {
             html += '<ul>';
             let total = 0;
             carrito.forEach((item, idx) => {
-                // Extraer el valor numérico del precio
                 const producto = productos.find(p => p.nombre === item.nombre);
                 let precioUnitario = 0;
                 if (producto) {
@@ -157,76 +155,23 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             html += '</ul>';
             html += `<p style="font-weight:bold;font-size:18px;margin-top:10px;">Total: $${total.toLocaleString('es-CO')}</p>`;
-
-            // Mostramos el calendario directamente (sin botón)
             html += `<div id="calendario-turnos" style="margin-top:15px;"></div>`;
-
-            // Formulario de datos del cliente
             html += `
-                <form id="form-datos-cliente" style="margin-top:15px;">
-                    <label>Nombre:<br><input type="text" name="nombre" required style="width:100%;margin-bottom:8px;"></label><br>
-                    <label>WhatsApp:<br><input type="tel" name="whatsapp" required style="width:100%;margin-bottom:8px;"></label><br>
-                    <label>Correo:<br><input type="email" name="correo" required style="width:100%;margin-bottom:8px;"></label><br>
-                    <button type="submit" style="padding:10px 20px;background:#000;color:#fff;border:none;border-radius:5px;cursor:pointer;font-size:16px;">Finalizar reserva</button>
-                </form>
-            `;
-            // ...dentro de mostrarCarrito, después de cerrar el </form>...
-            if (fechaSeleccionada && horaSeleccionada) {
-                const y = fechaSeleccionada.año;
-
-                // Hora de inicio y fin
-                const [h, min, ampm] = horaSeleccionada.match(/(\d+):(\d+)\s*(AM|PM)/i).slice(1);
-                let hora24 = parseInt(h);
-                if (ampm.toUpperCase() === "PM" && hora24 !== 12) hora24 += 12;
-                if (ampm.toUpperCase() === "AM" && hora24 === 12) hora24 = 0;
-
-                const duracionTotal = carrito.reduce((sum, item) => sum + (item.duracion * item.cantidad), 0);
-                let inicio = new Date(y, fechaSeleccionada.mes, fechaSeleccionada.dia, hora24, parseInt(min));
-                let fin = new Date(inicio);
-                fin.setMinutes(fin.getMinutes() + duracionTotal);
-
-                // Formato ISO para Google Calendar
-                const fechaInicio = inicio.toISOString();
-                const fechaFin = fin.toISOString();
-
-                const titulo = "Reserva Angie Varela Studio";
-                const descripcion = "Reserva realizada desde la web.";
-                const ubicacion = "Calle 3 Bis #1D-59, Garzón, Huila, Colombia";
-
-                html += `<button id="btn-google-calendar" style="margin-top:15px;padding:10px 18px;background:#4285F4;color:#fff;border-radius:6px;font-weight:600;border:none;cursor:pointer;">
-        Añadir a Google Calendar
-    </button>`;
-
-                setTimeout(() => {
-                    const btn = document.getElementById('btn-google-calendar');
-                    if (btn) {
-                        btn.onclick = function () {
-                            const event = {
-                                'summary': titulo,
-                                'location': ubicacion,
-                                'description': descripcion,
-                                'start': {
-                                    'dateTime': fechaInicio,
-                                    'timeZone': 'America/Bogota'
-                                },
-                                'end': {
-                                    'dateTime': fechaFin,
-                                    'timeZone': 'America/Bogota'
-                                }
-                            };
-                            handleAuthClick(event);
-                        };
-                    }
-                }, 100);
-            }
+            <form id="form-datos-cliente" style="margin-top:15px;">
+                <label>Nombre:<br><input type="text" name="nombre" required style="width:100%;margin-bottom:8px;"></label><br>
+                <label>WhatsApp:<br><input type="tel" name="whatsapp" required style="width:100%;margin-bottom:8px;"></label><br>
+                <label>Correo:<br><input type="email" name="correo" required style="width:100%;margin-bottom:8px;"></label><br>
+                <button type="submit" style="padding:10px 20px;background:#000;color:#fff;border:none;border-radius:5px;cursor:pointer;font-size:16px;">Finalizar reserva</button>
+            </form>
+        `;
         }
         const modal = document.createElement('div');
         modal.id = 'modal-carrito';
         modal.style = 'position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.7);display:flex;justify-content:center;align-items:center;z-index:2000;';
         modal.innerHTML = `<div style="background:#fff;padding:20px;border-radius:8px;max-width:90vw;max-height:90vh;position:relative;">
-            <button id="cerrar-carrito" style="position:absolute;top:10px;right:10px;font-size:1.5em;background:none;border:none;cursor:pointer;">&times;</button>
-            ${html}
-        </div>`;
+        <button id="cerrar-carrito" style="position:absolute;top:10px;right:10px;font-size:1.5em;background:none;border:none;cursor:pointer;">&times;</button>
+        ${html}
+    </div>`;
         document.body.appendChild(modal);
 
         document.getElementById('cerrar-carrito').onclick = () => modal.remove();
@@ -242,7 +187,6 @@ document.addEventListener('DOMContentLoaded', () => {
             };
         });
 
-        // Mostrar el calendario automáticamente si hay productos en el carrito
         if (carrito.length > 0) {
             const duracionTotal = carrito.reduce((sum, item) => sum + (item.duracion * item.cantidad), 0);
             mostrarCalendarioTurnos(modal.querySelector('#calendario-turnos'), duracionTotal);
@@ -260,12 +204,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Formatear fecha y hora seleccionadas
                 let fechaHoraTexto = '';
-                if (fechaSeleccionada && horaSeleccionada) {
-                    const meses = [
-                        "enero", "febrero", "marzo", "abril", "mayo", "junio",
-                        "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
-                    ];
-                    fechaHoraTexto = `\nFecha: ${fechaSeleccionada.dia} de ${meses[fechaSeleccionada.mes]} de ${fechaSeleccionada.año}\nHora: ${horaSeleccionada}`;
+                const meses = [
+                    "enero", "febrero", "marzo", "abril", "mayo", "junio",
+                    "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
+                ];
+                const duracionTotal = carrito.reduce((sum, item) => sum + (item.duracion * item.cantidad), 0);
+
+                if (fechaSeleccionada) {
+                    fechaHoraTexto = `\nFecha: ${fechaSeleccionada.dia} de ${meses[fechaSeleccionada.mes]} de ${fechaSeleccionada.año}`;
+                    if (duracionTotal > 180) {
+                        fechaHoraTexto += `\nHora: a convenir`;
+                    } else if (horaSeleccionada) {
+                        fechaHoraTexto += `\nHora: ${horaSeleccionada}`;
+                    } else {
+                        fechaHoraTexto += `\nHora: No seleccionada`;
+                    }
                 } else {
                     fechaHoraTexto = "\nFecha y hora: No seleccionadas";
                 }
@@ -274,19 +227,50 @@ document.addEventListener('DOMContentLoaded', () => {
                 const mensaje = encodeURIComponent(
                     `¡Hola! Quiero reservar los siguientes servicios: ${servicios}${fechaHoraTexto}\nNombre: ${nombre}\nWhatsApp: ${whatsapp}\nCorreo: ${correo}`
                 );
-                // Número de WhatsApp de destino (cámbialo por el tuyo)
                 const numeroDestino = "573135048789";
                 const url = `https://wa.me/${numeroDestino}?text=${mensaje}`;
 
-                window.open(url, '_blank');
-                modal.remove();
-                carrito = [];
-                actualizarContadorCarrito();
-                mostrarNotificacion(`¡Reserva enviada por WhatsApp! Gracias, ${nombre}.`);
+                // ADVERTENCIA antes de enviar
+                mostrarAdvertenciaModal(
+                    "Tu cita está pendiente de confirmación.<br>En breve te contactaremos por WhatsApp para asegurar disponibilidad.<br><br>¿Continuamos?",
+                    () => {
+                        window.open(url, '_blank');
+                        modal.remove();
+                        carrito = [];
+                        actualizarContadorCarrito();
+                        mostrarNotificacion(`¡Reserva enviada por WhatsApp! Gracias, ${nombre}.`);
+                    }
+                );
             };
         }
     }
-
+    function mostrarAdvertenciaModal(mensaje, onAceptar, onCancelar) {
+        // Si ya existe el modal, reutilízalo
+        let modal = document.getElementById('modal-advertencia');
+        if (!modal) {
+            modal = document.createElement('div');
+            modal.id = 'modal-advertencia';
+            modal.className = 'modal-advertencia';
+            modal.innerHTML = `
+            <div class="modal-advertencia-contenido">
+                <p id="mensaje-advertencia"></p>
+                <button id="btn-aceptar-advertencia">Aceptar</button>
+                <button id="btn-cancelar-advertencia">Cancelar</button>
+            </div>
+        `;
+            document.body.appendChild(modal);
+        }
+        document.getElementById('mensaje-advertencia').innerHTML = mensaje;
+        modal.classList.add('mostrar');
+        document.getElementById('btn-aceptar-advertencia').onclick = () => {
+            modal.classList.remove('mostrar');
+            if (onAceptar) onAceptar();
+        };
+        document.getElementById('btn-cancelar-advertencia').onclick = () => {
+            modal.classList.remove('mostrar');
+            if (onCancelar) onCancelar();
+        };
+    }
     // Función para mostrar el calendario y reservar turno
     function mostrarCalendarioTurnos(contenedor, duracionTotal) {
         // Fecha actual
@@ -407,118 +391,6 @@ document.addEventListener('DOMContentLoaded', () => {
             horaSeleccionada = this.value;
         };
     }
-
-    // Modificar el mensaje de WhatsApp para el caso de servicios largos (>180min)
-    // Sobrescribe la función mostrarCarrito para ajustar el mensaje según corresponda
-    mostrarCarrito = function () {
-        let html = '<h2>Carrito de compras</h2>';
-        if (carrito.length === 0) {
-            html += '<p>El carrito está vacío.</p>';
-        } else {
-            html += '<ul>';
-            let total = 0;
-            carrito.forEach((item, idx) => {
-                // Extraer el valor numérico del precio
-                const producto = productos.find(p => p.nombre === item.nombre);
-                let precioUnitario = 0;
-                if (producto) {
-                    precioUnitario = parseInt(producto.precio.replace(/\D/g, ''));
-                }
-                const subtotal = precioUnitario * item.cantidad;
-                total += subtotal;
-                html += `<li>${item.nombre} x${item.cantidad} <span style="font-weight:400;">($${subtotal.toLocaleString('es-CO')})</span> <button data-idx="${idx}" class="eliminar-item">Eliminar</button></li>`;
-            });
-            html += '</ul>';
-            html += `<p style="font-weight:bold;font-size:18px;margin-top:10px;">Total: $${total.toLocaleString('es-CO')}</p>`;
-
-            // Mostramos el calendario directamente (sin botón)
-            html += `<div id="calendario-turnos" style="margin-top:15px;"></div>`;
-
-            // Formulario de datos del cliente
-            html += `
-                <form id="form-datos-cliente" style="margin-top:15px;">
-                    <label>Nombre:<br><input type="text" name="nombre" required style="width:100%;margin-bottom:8px;"></label><br>
-                    <label>WhatsApp:<br><input type="tel" name="whatsapp" required style="width:100%;margin-bottom:8px;"></label><br>
-                    <label>Correo:<br><input type="email" name="correo" required style="width:100%;margin-bottom:8px;"></label><br>
-                    <button type="submit" style="padding:10px 20px;background:#000;color:#fff;border:none;border-radius:5px;cursor:pointer;font-size:16px;">Finalizar reserva</button>
-                </form>
-            `;
-        }
-        const modal = document.createElement('div');
-        modal.id = 'modal-carrito';
-        modal.style = 'position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.7);display:flex;justify-content:center;align-items:center;z-index:2000;';
-        modal.innerHTML = `<div style="background:#fff;padding:20px;border-radius:8px;max-width:90vw;max-height:90vh;position:relative;">
-            <button id="cerrar-carrito" style="position:absolute;top:10px;right:10px;font-size:1.5em;background:none;border:none;cursor:pointer;">&times;</button>
-            ${html}
-        </div>`;
-        document.body.appendChild(modal);
-
-        document.getElementById('cerrar-carrito').onclick = () => modal.remove();
-        modal.onclick = (e) => { if (e.target === modal) modal.remove(); };
-
-        modal.querySelectorAll('.eliminar-item').forEach(btn => {
-            btn.onclick = function () {
-                const idx = parseInt(this.getAttribute('data-idx'));
-                carrito.splice(idx, 1);
-                modal.remove();
-                mostrarCarrito();
-                actualizarContadorCarrito();
-            };
-        });
-
-        // Mostrar el calendario automáticamente si hay productos en el carrito
-        if (carrito.length > 0) {
-            const duracionTotal = carrito.reduce((sum, item) => sum + (item.duracion * item.cantidad), 0);
-            mostrarCalendarioTurnos(modal.querySelector('#calendario-turnos'), duracionTotal);
-        }
-
-        // Acción del formulario de datos del cliente
-        const formDatos = modal.querySelector('#form-datos-cliente');
-        if (formDatos) {
-            formDatos.onsubmit = function (e) {
-                e.preventDefault();
-                const nombre = formDatos.nombre.value.trim();
-                const whatsapp = formDatos.whatsapp.value.trim();
-                const correo = formDatos.correo.value.trim();
-                const servicios = carrito.map(item => `${item.nombre} x${item.cantidad}`).join(', ');
-
-                // Formatear fecha y hora seleccionadas
-                let fechaHoraTexto = '';
-                const meses = [
-                    "enero", "febrero", "marzo", "abril", "mayo", "junio",
-                    "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
-                ];
-                const duracionTotal = carrito.reduce((sum, item) => sum + (item.duracion * item.cantidad), 0);
-
-                if (fechaSeleccionada) {
-                    fechaHoraTexto = `\nFecha: ${fechaSeleccionada.dia} de ${meses[fechaSeleccionada.mes]} de ${fechaSeleccionada.año}`;
-                    if (duracionTotal > 180) {
-                        fechaHoraTexto += `\nHora: a convenir`;
-                    } else if (horaSeleccionada) {
-                        fechaHoraTexto += `\nHora: ${horaSeleccionada}`;
-                    } else {
-                        fechaHoraTexto += `\nHora: No seleccionada`;
-                    }
-                } else {
-                    fechaHoraTexto = "\nFecha y hora: No seleccionadas";
-                }
-
-                // Mensaje para WhatsApp
-                const mensaje = encodeURIComponent(
-                    `¡Hola! Quiero reservar los siguientes servicios: ${servicios}${fechaHoraTexto}\nNombre: ${nombre}\nWhatsApp: ${whatsapp}\nCorreo: ${correo}`
-                );
-                // Número de WhatsApp de destino (cámbialo por el tuyo)
-                const numeroDestino = "573135048789";
-                const url = `https://wa.me/${numeroDestino}?text=${mensaje}`;
-
-                window.open(url, '_blank');
-                modal.remove();
-                carrito = [];
-                actualizarContadorCarrito();
-                mostrarNotificacion(`¡Reserva enviada por WhatsApp! Gracias, ${nombre}.`);
-            };
-        }
-    };
 
     // Evento para botones "Reservar servicio" y mostrar carrito
     document.addEventListener("click", function (e) {
