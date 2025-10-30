@@ -214,6 +214,53 @@
         "precio": "$1.200.000",
         "duracion": 720,
         "imagenes": [""]
+    },
+    {
+        "nombre": "Pestañas Clásicas",
+        "categoria": "Pestañas",
+        "descripcion": "Katherine Beltrán, nuestra lashista especializada, realiza este servicio con una técnica precisa y un cuidado minucioso en cada aplicación. Las extensiones de pestañas clásicas se colocan una a una sobre las pestañas naturales, creando un efecto delicado, elegante y perfectamente definido. Ideal para quienes desean realzar su mirada con un acabado natural y sofisticado, manteniendo la armonía y frescura del rostro.",
+        "precio": "$75.000",
+        "duracion": 120,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Pestañas Efecto Aura",
+        "categoria": "Pestañas",
+        "descripcion": "Katherine Beltrán, nuestra lashista especializada, realiza este servicio aplicando una técnica que combina longitud y textura para lograr un efecto ligero, romántico y con movimiento natural. Las extensiones se distribuyen estratégicamente para aportar un realce sutil en el centro del ojo, iluminando la mirada con un acabado suave y femenino. Ideal para quienes desean una apariencia delicada pero con un toque de encanto y profundidad.",
+        "precio": "$90.000",
+        "duracion": 120,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Pestañas Efecto Híbrido",
+        "categoria": "Pestañas",
+        "descripcion": "Katherine Beltrán, nuestra lashista especializada, realiza este servicio combinando la técnica clásica con volumen para lograr un equilibrio perfecto entre naturalidad e intensidad. Las extensiones se aplican de forma estratégica para aportar definición y densidad, creando una mirada más expresiva y con profundidad sin perder la armonía. Ideal para quienes desean un acabado versátil, elegante y con un toque de glamour.",
+        "precio": "$100.000",
+        "duracion": 120,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Pestañas Volumen 3D",
+        "categoria": "Pestañas",
+        "descripcion": "Katherine Beltrán, nuestra lashista especializada, realiza este servicio utilizando abanicos de extensiones ultraligeras que se aplican con precisión sobre cada pestaña natural, logrando un efecto de mayor densidad y profundidad. El resultado es una mirada más intensa, definida y cautivadora, sin perder la suavidad ni el confort. Ideal para quienes buscan un estilo sofisticado, con volumen y un acabado perfectamente equilibrado.",
+        "precio": "$120.000",
+        "duracion": 120,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Pestañas Efecto Foxy Eyes",
+        "categoria": "Pestañas",
+        "descripcion": "Katherine Beltrán, nuestra lashista especializada, realiza este servicio aplicando extensiones con una técnica que alarga y eleva la mirada hacia los extremos, creando un efecto rasgado y seductor. Las pestañas se disponen con mayor longitud en la parte externa del ojo para lograr una forma estilizada y envolvente. Ideal para quienes desean una mirada intensa, moderna y con un toque de elegancia atrevida.",
+        "precio": "$120.000",
+        "duracion": 120,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Pestañas Mega Volumen 6D",
+        "categoria": "Pestañas",
+        "descripcion": "Katherine Beltrán, nuestra lashista especializada, realiza este servicio aplicando abanicos de extensiones ultrafinas en grupos de hasta seis hebras por pestaña natural, logrando un volumen máximo con un acabado liviano y cómodo. El resultado es una mirada impactante, profunda y glamorosa, ideal para quienes buscan un estilo más dramático sin comprometer la elegancia ni el bienestar de sus pestañas naturales.",
+        "precio": "$140.000",
+        "duracion": 120,
+        "imagenes": [""]
     }
 ]
-
