@@ -262,5 +262,22 @@
         "precio": "$140.000",
         "duracion": 120,
         "imagenes": [""]
+    },
+    {
+        "nombre": "Retoques de Pestañas",
+        "categoria": "Pestañas",
+        "descripcion": "Este servicio permite conservar la forma, el volumen y la armonía de la mirada con un acabado impecable.<br>Valores según el tipo de efecto:<br>• Clásicas: $35.000<br>• Efecto Aura: $45.000<br>• Efecto Híbrido: $50.000<br>• Volumen 3D: $60.000<br>• Foxy Eyes: $60.000<br>• Mega Volumen 6D: $70.000",
+        "precio": "$0",
+        "duracion": 90,
+        "imagenes": [""]
+    },
+    {
+        "nombre": "Retiro de Pestañas",
+        "categoria": "Pestañas",
+        "descripcion": "Realiza el retiro de extensiones de pestañas con técnicas seguras y productos adecuados que protegen la salud y fortaleza de las pestañas naturales.<br> El proceso se realiza con delicadeza, sin causar molestias ni daños, dejando las pestañas limpias, suaves y listas para una nueva aplicación o para su cuidado natural.",
+        "precio": "$20.000",
+        "duracion": 30,
+        "imagenes": [""]
     }
 ]
+
